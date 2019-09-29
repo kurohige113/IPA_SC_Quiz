@@ -18,7 +18,9 @@
       <button v-on:click="getRandom">ランダム</button>
     </p>
 
-    <div class="quiz" v-for="q in quiz">
+    <div v-show="loading" class="loader">Now loading...</div>
+    <div v-show="!loading">
+      <div class="quiz" v-for="q in quiz">
       <div class="main">
         <a id="top"></a>
         <div id="category">分野：{{q.category}}</div>
@@ -57,6 +59,7 @@
         <a href="#ans" class="square_btn" v-on:click='select_answer'>ウ</a>
         <a href="#ans" class="square_btn" v-on:click='select_answer'>エ</a>
         <a href="#top" class="random_btn" v-on:click='getRandom'>次</a>
+      </div>
       </div>
     </div>
 

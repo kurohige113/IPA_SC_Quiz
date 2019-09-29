@@ -4,6 +4,8 @@ new Vue({
     message: 'Quiz',
     param_row: null,
     quiz: null,
+    first_contact: true,
+    loading: false,
   },
   methods:{
     // データ取得処理
@@ -11,11 +13,15 @@ new Vue({
       var db_url = 'https://script.google.com/macros/s/AKfycbyNTkW4nMswG0BPvZAiGuXItvXNeHJHe7CZ1ip_9cgGZ2lsM4w/exec'
       var query = '?row=' + this.param_row;
 
+      // ロード中に設定する
+      this.loading = true;
+
       // GET通信
       axios.get(db_url+query)
       // thenで成功した場合の処理をかける
       .then(response => {
         this.quiz = response.data
+        this.loading = false;
       })
       // catchでエラー時の挙動を定義する
       .catch(err => {
@@ -32,11 +38,15 @@ new Vue({
       var db_url = 'https://script.google.com/macros/s/AKfycbyNTkW4nMswG0BPvZAiGuXItvXNeHJHe7CZ1ip_9cgGZ2lsM4w/exec'
       var query = '?row=' + Math.floor(Math.random() * (MAX_SHEET_ROW_INDEX+1 - 2) + 2); // ヘッダー行を出さないように
 
+      // ロード中に設定する
+      this.loading = true;
+
       // GET通信
       axios.get(db_url+query)
       // thenで成功した場合の処理をかける
       .then(response => {
         this.quiz = response.data
+        this.loading = false;
       })
       // catchでエラー時の挙動を定義する
       .catch(err => {
