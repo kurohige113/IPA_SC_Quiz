@@ -1,47 +1,115 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size:1.6rem;/* 16px*/
+  line-height: 2;
+}
+
 .square_btn {
-    position: relative;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 3px;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border-left: solid 4px #668ad8;
-    border-right: solid 4px #668ad8;
-    color: #668ad8;
-    background: #e1f3ff;
-    transition: .4s;
-  }
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin :0.1em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  background: #e1f3ff;
+  transition: .4s;
+}
 
-  .square_btn:hover {
-    background: #668ad8;
-    color: #FFF;
-  }
+.square_btn:hover {
+  background: #668ad8;
+  color: #FFF;
+}
 
-  .selected_area {
-    background-color: cornsilk;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 3px;
-  }
 
-  .answer_area {
-    visibility: hidden;
-  }
+#question {
+  word-wrap: break-word;
+}
 
-  .commentary_area {
-    background-color: cornsilk;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 3px;
-  }
+.selected_area {
+  background-color: cornsilk;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
 
+.selected_area p {
+  word-wrap: break-word;
+  border-style: ridge;
+  padding: 3px;
+}
+.selected_area a {
+  float: left;
+}
+
+.answer_area {
+  visibility: hidden;
+  word-wrap: break-word;
+}
+
+.commentary_area {
+  background-color: cornsilk;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+  word-wrap: break-word;
+}
+
+h3 {
+  padding: 0.25em 0.5em;
+  /*上下 左右の余白*/
+  color: #494949;
+  /*文字色*/
+  background: transparent;
+  /*左線*/
+  border-left: solid 5px #7db4e6;
+}
+
+.footer {
+  visibility: hidden;
+}
+
+/* クリアフィックス */
+.cf:before,
+.cf:after{
+    content: "";
+    display: table;
+}
+.cf:after{ clear: both; }
+.cf{ zoom: 1; }
+
+/* スマホ対応 */
+@media screen and (max-width: 640px) {/* 640px以下*/
+  body{
+    font-size: 2rem;
+    line-height: 2;
+  }
   h3 {
-    padding: 0.25em 0.5em;
-    /*上下 左右の余白*/
-    color: #494949;
-    /*文字色*/
-    background: transparent;
-    /*背景透明に*/
-    border-left: solid 5px #7db4e6;
-    /*左線*/
+    font-size: 2.4rem;
   }
+  .square_btn {
+    font-size: 2rem;
+  }
+  .main {
+    padding-bottom: 15rem;
+  }
+  .footer {
+    float: left;
+    visibility: visible;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: black;
+  }
+}
+
