@@ -1,0 +1,47 @@
+.square_btn {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 3px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #668ad8;
+    border-right: solid 4px #668ad8;
+    color: #668ad8;
+    background: #e1f3ff;
+    transition: .4s;
+  }
+
+  .square_btn:hover {
+    background: #668ad8;
+    color: #FFF;
+  }
+
+  .selected_area {
+    background-color: cornsilk;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+  }
+
+  .answer_area {
+    visibility: hidden;
+  }
+
+  .commentary_area {
+    background-color: cornsilk;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+  }
+
+  h3 {
+    padding: 0.25em 0.5em;
+    /*上下 左右の余白*/
+    color: #494949;
+    /*文字色*/
+    background: transparent;
+    /*背景透明に*/
+    border-left: solid 5px #7db4e6;
+    /*左線*/
+  }

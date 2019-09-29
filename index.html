@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>情報処理安全確保支援士試験 一問一答
+  </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+
+    <p>取得行: <input type="text" id="param_row" v-model="param_row">
+      <button v-on:click="get">取得</button>
+      <button v-on:click="getRandom">ランダム</button>
+    </p>
+
+    <div class="quiz" v-for="q in quiz">
+      <div class="main">
+        <div　id="category">分野：{{q.category}}</div>
+
+        <div id="title">
+          <h3>{{q.title}}(ID:{{q.id}})</h3>
+        </div>
+
+        <div id="question">
+          {{q.question}}
+        </div>
+
+        <div class="selected_area">
+          <p><a href="#ans" class="square_btn" v-on:click='select_answer'>ア</a>{{q.selection1}}</p>
+          <p><a href="#ans" class="square_btn" v-on:click='select_answer'>イ</a>{{q.selection2}}</p>
+          <p><a href="#ans" class="square_btn" v-on:click='select_answer'>ウ</a>{{q.selection3}}</p>
+          <p><a href="#ans" class="square_btn" v-on:click='select_answer'>エ</a>{{q.selection4}}</p>
+        </div>
+
+        <div class="answer_area">
+          <a id="ans"></a>
+          <h3>解答</h3>
+          <div class="answer">
+            {{q.answer}}
+          </div>
+
+          <h3>解説</h3>
+          <div class="commentary_area">
+            {{q.explanation}}
+          </div>
+
+          <div class="next">
+            <button v-on:click="getRandom">ランダム</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="webApi.js"></script>
+
+</body>
+
+</html>
