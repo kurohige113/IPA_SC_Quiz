@@ -13,6 +13,9 @@ new Vue({
       var db_url = 'https://script.google.com/macros/s/AKfycbyNTkW4nMswG0BPvZAiGuXItvXNeHJHe7CZ1ip_9cgGZ2lsM4w/exec'
       var query = '?row=' + this.param_row;
 
+      // 初期入力設定
+      this.first_contact = false;
+
       // ロード中に設定する
       this.loading = true;
 
@@ -37,6 +40,9 @@ new Vue({
       var MAX_SHEET_ROW_INDEX = 6; // クイズの数ではなくシートの行数
       var db_url = 'https://script.google.com/macros/s/AKfycbyNTkW4nMswG0BPvZAiGuXItvXNeHJHe7CZ1ip_9cgGZ2lsM4w/exec'
       var query = '?row=' + Math.floor(Math.random() * (MAX_SHEET_ROW_INDEX+1 - 2) + 2); // ヘッダー行を出さないように
+
+      // 初期入力設定
+      this.first_contact = false;
 
       // ロード中に設定する
       this.loading = true;

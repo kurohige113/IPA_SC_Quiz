@@ -130,6 +130,9 @@ h3 {
     height: 8rem;
     background-color: black;
   }
+  .next {
+    visibility: hidden;
+  }
 }
 
 /*ローディング画面　
